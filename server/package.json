@@ -1,14 +1,14 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Api Back-End Data Layer",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "devStart": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "José Navarro",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

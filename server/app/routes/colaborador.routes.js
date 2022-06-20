@@ -5,25 +5,11 @@ module.exports = app => {
     
     var router = require("express").Router();
     
-    // Crear un nuevo colaborador    
-    router.post('/', function(req, res){
-        colaboradores.create
-    });
-    
-    // Obtener todos los colaboradores
-    router.get('/lista', function(req, res){
-        colaboradores.getAll
-    });
-    
-    // Obtener colaborador por ID
-    router.get('/:numero', function(req, res){
-        colaboradores.findById
-    });
-    
-    // Actualizar colaborador
-    router.get('/:numero', function(req, res){
-        colaboradores.updateById
-    });
-    
+    // Crear un nuevo colaborador
+    router.post("/crear", colaboradores.create);
+
+    // Ruta para extracción de todos los colaboradores
+    router.get("/total", colaboradores.getAllColaboradores);
+
     app.use('/api/colaboradores', router);
 };
