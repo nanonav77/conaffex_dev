@@ -15,6 +15,25 @@ exports.getAllColaboradores = (req, res) => {
     });
 };
 
+/// Funcion para un determinado colaborador según su ID
+
+exports.getOneColaborador = (req, res) => {
+  
+  Colaborador.getOneColaborador(req.params.numero, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `No se encontró el colaborador con número ${req.params.numero}.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error al extraer el colaborador con número " + req.params.numero
+        });
+      }
+    } else res.send(data);
+  });
+
+};
 
 /// Funcion para la creación de un nuevo colaborador
 
@@ -44,4 +63,36 @@ exports.create = (req, res) => {
       });
     else res.send(data);
   });
+};
+
+/// Funcion para la actualización de un determinado colaborador
+
+exports.update = (req, res) => {
+  
+  if (!req.body) {
+    res.status(400).send({
+      message: "El contenido no debe ser vacío!"
+    });
+  }
+
+  console.log(req.body);
+
+  Colaborador.updateById(
+    req.params.numero,
+    new Colaborador(req.body),
+    (err, data) => {
+      if (err) {
+        if (err.kind === "not_found") {
+          res.status(404).send({
+            message: `No se encontró el colaborador con número ${req.params.numero}.`
+          });
+        } else {
+          res.status(500).send({
+            message: "Error al actualizar el colaborador con número " + req.params.numero
+          });
+        }
+      } else res.send(data);
+    }
+  );
+
 };
