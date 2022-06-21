@@ -20,6 +20,12 @@ app.get("/", (req, res) => {
 // Declaramos la ruta para las API de los colaboradores
 require("./app/routes/colaborador.routes.js")(app);
 
+// Declaramos la ruta para las API de las fincas
+require("./app/routes/finca.routes.js")(app);
+
+// Declaramos la ruta para las API de los usuarios
+require("./app/routes/usuario.routes.js")(app);
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
