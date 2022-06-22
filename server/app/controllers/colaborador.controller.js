@@ -51,7 +51,8 @@ exports.create = (req, res) => {
     identificacion: req.body.identificacion,
     telefono: req.body.telefono,
     email: req.body.email,
-    estado: req.body.estado
+    estado: req.body.estado,
+    cuenta: req.body.cuenta,
   });
   
   // Guardamos el colaborador nuevo

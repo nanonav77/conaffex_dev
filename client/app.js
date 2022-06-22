@@ -5,7 +5,17 @@ const router = express.Router();
 
 router.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/express/index.html'));
-  //__dirname : It will resolve to your project folder.
+  //Direccion por defecto que debe utilizar al aplicación/sitio web.
+});
+
+router.get('/addcolaborador',function(req,res){
+  res.sendFile(path.join(__dirname+'/express/add_colaborador.html'));
+  //Direccion a la página de agregar colaborador.
+});
+
+router.get('/udpdatecolaborador',function(req,res){
+  res.sendFile(path.join(__dirname+'/express/modificar_colaborador.html'));
+  //Direccion a la página de modificar colaborador.
 });
 
 router.get('/about',function(req,res){
