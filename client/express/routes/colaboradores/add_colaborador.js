@@ -43,7 +43,8 @@ $(document).ready(function() {
         telefono.value = " ";
         cuenta.value = " ";
         email.value = " ";
-        direccion.value = " ";        
-
+        direccion.value = " ";   
+        
     });
+
 });
